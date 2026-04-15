@@ -8,14 +8,30 @@ We build the tooling layer between AI agents and the data they need — from ope
 
 ### Open Source
 
-**[axis-mcp-cli](https://github.com/axis-mcp/axis-mcp-cli)** — A free, open-source CLI framework for managing MCP servers across Claude Desktop, Cursor, and Windsurf. Add servers once, sync them everywhere. No more manual JSON editing.
+**[axis-mcp-cli](https://github.com/axis-mcp/axis-mcp-cli)** — A free, open-source CLI framework for managing MCP servers across Claude Desktop, Cursor, and Windsurf.
+
+axis keeps a single local registry at `~/.axis/registry.json` as the source of truth. Client config files for Claude Desktop, Cursor, and Windsurf are treated as write targets — add a server once, sync it everywhere with one command. No more manual JSON editing, no more config drift between machines.
 
 ```bash
+# Install
 npm install -g axis-mcp-cli
+
+# Set up your local registry
 axis init
-axis add npm:<package> --name my-server
-axis enable my-server --target all
+
+# Register a server
+axis add npm:@modelcontextprotocol/server-sse --name axis-stocks \
+  --command npx \
+  --args "-y @modelcontextprotocol/server-sse https://mcp.axis-mcp.live/stocks"
+
+# Sync to every client at once
+axis enable axis-stocks --target all
+
+# Check what is synced where
+axis status
 ```
+
+Built with TypeScript, MIT licensed, Node 18+. Contributions welcome.
 
 ---
 
