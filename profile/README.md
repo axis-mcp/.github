@@ -46,4 +46,4 @@ Built with TypeScript, MIT licensed, Node 18+. Contributions welcome.
 - Website: [axis-mcp.live](https://axis-mcp.live)
 - Docs: [axis-mcp.live/docs](https://axis-mcp.live/docs)
 - CLI: [axis-mcp.live/axis](https://axis-mcp.live/axis)
-- Contact: [axis.mcp.support@gmail.com](mailto:axis.mcp.support@gmail.com)
+- Contact: [contact@axis-mcp.live](mailto:contact@axis-mcp.live)
